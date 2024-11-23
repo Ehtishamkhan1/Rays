@@ -22,7 +22,7 @@ export default function CustomTabbar({ state, descriptors, navigation }) {
               marginHorizontal : 10,
               position : 'relative',
               top:10,
-              boxShadow: '5px 5px 8px rgba(0, 0, 0, 0.2)'
+              boxShadow: '5px 5px 8px rgba(0, 0, 0, 0.1)'
             }}
           >
             <Text

@@ -11,6 +11,7 @@ import Entypo from "@expo/vector-icons/Entypo";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { LinearGradient } from "expo-linear-gradient";
 import GivenpointTable from "../../Components/GivenpointTable";
+import { TouchableRipple } from "react-native-paper";
 
 
 export default function Givenpoints() {
@@ -58,7 +59,7 @@ export default function Givenpoints() {
                 borderBlockColor: "white",
                 borderRightColor: "white",
                 borderLeftColor: "white",
-                boxShadow: '5px 10px 8px rgba(0, 0, 0, 0.4)'
+                boxShadow: '5px 10px 8px rgba(0, 0, 0, 0.2)'
               }}
           >
            
@@ -231,6 +232,7 @@ export default function Givenpoints() {
                   backgroundColor: "#BC1E2D",
                   paddingVertical: 5,
                   borderRadius: 10,
+                  boxShadow: "5px 5px 8px rgba(212, 0, 0, 0.2)",
                 }}
               >
                 <Text
@@ -244,9 +246,8 @@ export default function Givenpoints() {
           {/* </View> */}
         </View>
 
-
-
-        <View style={{ height: 100 }}>
+        <View  style={{flex:1,marginTop:20, boxShadow: '5px 10px 8px rgba(0, 0, 0, 0.4)' }} >
+          
            <GivenpointTable />
         </View>
       </View>
