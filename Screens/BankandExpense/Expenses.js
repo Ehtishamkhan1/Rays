@@ -17,7 +17,7 @@ import { TouchableRipple } from "react-native-paper";
 
 export default function Expenses() {
     return (
-        <View>
+        <View style={{ flex: 1, backgroundColor: "white" }} >
             <View
                 style={{
                     height: 300,
@@ -209,7 +209,7 @@ export default function Expenses() {
                 </LinearGradient>
             </View>
 
-            <View style={{ marginTop: 20, boxShadow: '5px 10px 8px rgba(0, 0, 0, 0.4)', height: 330}} >
+            <View style={{ marginTop: 20, boxShadow: '5px 10px 8px rgba(0, 0, 0, 0.4)',flex:1}} >
                     <ExpensesTable />
             </View>
         </View>

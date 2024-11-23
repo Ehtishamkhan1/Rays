@@ -13,8 +13,8 @@ import Givenpoints from '../Screens/Points/Givenpoints';
 import Pendingpoints from '../Screens/Points/Pendingpoints';
 import CustomTabbar from './CustomTabbar';
 import Raylogo from '../assets/Raylogo.png';
-import Bank from '../Screens/Bank/Bank';
-import Expenses from '../Screens/Bank/Expenses';
+import Bank from '../Screens/BankandExpense/Bank';
+import Expenses from '../Screens/BankandExpense/Expenses';
 
 
 const Drawer = createDrawerNavigator();
@@ -78,7 +78,7 @@ function Mydrawer(){
         }} >
       <Drawer.Screen name="Points" component={MyTabs} options={{title:"Points",headerTitleAlign:"center",}}  />
       <Drawer.Screen name="Ticket" component={Ticket} />
-      <Drawer.Screen name="Bank" component={MyTab1} />
+      <Drawer.Screen name="Banks" component={MyTab1} options={{title:"Bank & Expenses",headerTitleAlign:"center"}}  />
       <Drawer.Screen name="Newmember" component={NewMember} />
       <Drawer.Screen name="Setting" component={Setting} />
     </Drawer.Navigator>

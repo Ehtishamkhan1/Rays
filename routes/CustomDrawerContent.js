@@ -37,7 +37,7 @@ export default function CustomDrawerContent(props) {
       id: 3,
       title: "Bank & Expenses",
       icon: <FontAwesome name="bank" size={24} color="black" />,
-      name: "Bank",
+      name: "Banks",
     },
     {
       id: 4,
