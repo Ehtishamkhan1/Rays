@@ -125,19 +125,6 @@ export default function Givenpoints() {
               </View>
             </View>
 
-            {/* <View style={{display:"flex",alignItems:"center",flexDirection:"row",gap:20,marginTop:20}} >
-              <Text style={{fontSize:20,fontWeight:"bold",color:"white"}} >Amount</Text>
-              <TextInput placeholder='Amount' style={{width:150,borderWidth:1,position:"relative",left:4,color:"white",borderColor:"white" }} placeholderTextColor={"white"}  />
-              <View>
-             <TouchableOpacity style={{width:50,display:"flex",alignItems:"center",justifyContent:"center"}} >
-             <Entypo name="circle-with-plus" size={24} color="white" />
-             </TouchableOpacity>
-             <TouchableOpacity style={{width:50,display:"flex",alignItems:"center",justifyContent:"center"}} >
-             <Entypo name="circle-with-minus" size={24} color="white" />
-             </TouchableOpacity>
-             </View>
-           </View> */}
-
             <View
               style={{
                 display: "flex",

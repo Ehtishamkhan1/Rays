@@ -4,10 +4,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Login from '../Screens/Login';
 import Register from '../Screens/Register';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import Points from '../Screens/Points';
 import Ticket from '../Screens/Ticket';
 import CustomDrawerContent from './CustomDrawerContent';
-import Bank from '../Screens/Bank';
 import NewMember from '../Screens/NewMember';
 import Setting from '../Screens/Setting';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
@@ -15,6 +13,8 @@ import Givenpoints from '../Screens/Points/Givenpoints';
 import Pendingpoints from '../Screens/Points/Pendingpoints';
 import CustomTabbar from './CustomTabbar';
 import Raylogo from '../assets/Raylogo.png';
+import Bank from '../Screens/Bank/Bank';
+import Expenses from '../Screens/Bank/Expenses';
 
 
 const Drawer = createDrawerNavigator();
@@ -49,6 +49,22 @@ function MyTabs() {
   );
 }
 
+function MyTab1() {
+  return (
+    <Tab.Navigator
+    initialRouteName="Bank"
+    tabBar={props => <CustomTabbar {...props} />}
+    screenOptions={{
+     tabBarIndicatorStyle: { backgroundColor:'Transparent' }, 
+    }}
+    
+  >
+    <Tab.Screen name="Bank" component={Bank} options={{title:"Bank",headerTitleAlign:"center"}}  />
+    <Tab.Screen name="Expenses" component={Expenses} options={{title:"Expenses",headerTitleAlign:"center"}}  />
+  </Tab.Navigator>
+  );
+}
+
 
 function Mydrawer(){
   return(
@@ -62,7 +78,7 @@ function Mydrawer(){
         }} >
       <Drawer.Screen name="Points" component={MyTabs} options={{title:"Points",headerTitleAlign:"center",}}  />
       <Drawer.Screen name="Ticket" component={Ticket} />
-      <Drawer.Screen name="Bank" component={Bank} />
+      <Drawer.Screen name="Bank" component={MyTab1} />
       <Drawer.Screen name="Newmember" component={NewMember} />
       <Drawer.Screen name="Setting" component={Setting} />
     </Drawer.Navigator>
