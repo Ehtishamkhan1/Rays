@@ -136,7 +136,7 @@ export default function NewMember() {
           }}
         ></TextInput>
         <TextInput
-          placeholder="DL"
+          placeholder="Driving License"
           placeholderTextColor={"black"}
           style={{
             width: "85%",
