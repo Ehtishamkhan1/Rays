@@ -6,6 +6,15 @@ import Ticket from "../assets/Ticket.png";
 import Bank from "../assets/Bank.png";
 import NewMember from "../assets/Newmember.png";
 import Settings from "../assets/Setting.png";
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import Entypo from '@expo/vector-icons/Entypo';
+import FontAwesome from '@expo/vector-icons/FontAwesome';
+import Ionicons from '@expo/vector-icons/Ionicons';
+
+
+
+
+
 
 
 export default function CustomDrawerContent(props) {
@@ -15,31 +24,31 @@ export default function CustomDrawerContent(props) {
     {
       id: 1,
       title: "Points",
-      icon: Point,
+      icon: <MaterialIcons name="scoreboard" size={24} color="black" />,
       name: "Points",
     },
     {
       id: 2,
       title: "Ticket",
-      icon: Ticket,
+      icon: <Entypo name="ticket" size={24} color="black" />,
       name: "Ticket",
     },
     {
       id: 3,
       title: "Bank & Expenses",
-      icon: Bank,
+      icon: <FontAwesome name="bank" size={24} color="black" />,
       name: "Bank",
     },
     {
       id: 4,
       title: "New Member",
-      icon: NewMember,
+      icon: <Ionicons name="person-add" size={24} color="black" />,
       name: "Newmember",
     },
     {
       id: 5,
       title: "Settings",
-      icon: Settings,
+      icon: <MaterialIcons name="settings" size={24} color="black" />,
       name: "Setting",
     },
   ];
@@ -80,9 +89,9 @@ export default function CustomDrawerContent(props) {
             key={item.id}
             style={{ display: "flex", flexDirection: "row", margin: 10 }}
           >
-            <TouchableOpacity style={{ display: "flex", flexDirection: "row",}} onPress={() => navigation.navigate(item.name)}   >
-              <Image source={item.icon} style={{ width: 25, height: 25 }} />
-
+          <TouchableOpacity style={{ display: "flex", flexDirection: "row",width:"80%"}} onPress={() => navigation.navigate(item.name)}   >
+              {/* <Image source={item.icon} style={{ width: 25, height: 25 }} /> */}
+              {item.icon}
               <Text
                 style={{ marginLeft: 10, paddingLeft: 10, marginBottom: 20 }}
               >

@@ -13,20 +13,19 @@ import { LinearGradient } from "expo-linear-gradient";
 import GivenpointTable from "../../Components/GivenpointTable";
 import { TouchableRipple } from "react-native-paper";
 
-
 export default function Givenpoints() {
   return (
     // <ImageBackground source={Back} style={{ flex: 1 }}>
-      <View style={{ flex: 1, backgroundColor: "white" }}>
-        <View
-          style={{
-            height: 300,
-            padding: 10,
-            paddingVertical: 20,
-            paddingHorizontal: 20,
-          }}
-        >
-          {/* <View
+    <View style={{ flex: 1, backgroundColor: "white" }}>
+      <View
+        style={{
+          height: 300,
+          padding: 10,
+          paddingVertical: 20,
+          paddingHorizontal: 20,
+        }}
+      >
+        {/* <View
             style={{
               height: "100%",
               display: "flex",
@@ -41,30 +40,28 @@ export default function Givenpoints() {
               
             }}
           > */}
-             <LinearGradient
-            colors={[
-                "rgba(5,2,2,0.8)",    // 80% opacity
-                "rgba(188,30,45,0.9)", // 60% opacity
-                "rgba(218,165,32,0.7)" // 40% opacity
-              ]}
-             start={{ x: 0.5, y: 0 }}
-             // End at the bottom
-             end={{ x: 0.5, y: 1 }}
-            style={{
-                height: "100%",
-                display: "flex",
-                alignItems: "center",
-                paddingTop: 45,
-                borderRadius: 10,
-                borderBlockColor: "white",
-                borderRightColor: "white",
-                borderLeftColor: "white",
-                boxShadow: '5px 10px 8px rgba(0, 0, 0, 0.2)'
-              }}
-          >
-           
-        
-            {/* <View style={{display:"flex",alignItems:"center",flexDirection:"row",gap:5}} >
+        <LinearGradient
+          colors={[
+            "rgba(5,2,2,0.8)", // 80% opacity
+            "rgba(188,30,45,0.9)", // 60% opacity
+            "rgba(218,165,32,0.7)", // 40% opacity
+          ]}
+          start={{ x: 0.5, y: 0 }}
+          // End at the bottom
+          end={{ x: 0.5, y: 1 }}
+          style={{
+            height: "100%",
+            display: "flex",
+            alignItems: "center",
+            paddingTop: 30,
+            borderRadius: 10,
+            borderBlockColor: "white",
+            borderRightColor: "white",
+            borderLeftColor: "white",
+            boxShadow: "5px 10px 8px rgba(0, 0, 0, 0.2)",
+          }}
+        >
+          {/* <View style={{display:"flex",alignItems:"center",flexDirection:"row",gap:5}} >
              <Text style={{fontSize:20,fontWeight:"bold",color:"white"}} >Machine</Text>
              <TouchableOpacity style={{width:50,display:"flex",alignItems:"center",justifyContent:"center"}} >
              <Entypo name="circle-with-plus" size={24} color="white" />
@@ -77,55 +74,97 @@ export default function Givenpoints() {
              </View>
            </View> */}
 
+          <View
+            style={{
+              display: "flex",
+              alignItems: "center",
+              flexDirection: "row",
+              gap: 10,
+              marginBottom: 10,
+            }}
+          >
+            <Text style={{ fontSize: 15, fontWeight: "bold", color: "white" }}>
+              Customer
+            </Text>
+
+            {/* Container for the TextInput and icons */}
             <View
               style={{
-                display: "flex",
-                alignItems: "center",
                 flexDirection: "row",
-                gap: 10,
+                alignItems: "center",
+                borderWidth: 0.5,
+                borderColor: "white",
+                borderRadius: 10,
+                position: "relative",
+                width: 140,
+                left: 12, // Adjust width according to your needs
               }}
             >
-              <Text
-                style={{ fontSize: 18, fontWeight: "bold", color: "white" }}
-              >
-                Machine
-              </Text>
+              {/* Left icon inside the TextInput */}
 
-              {/* Container for the TextInput and icons */}
-              <View
+              {/* The TextInput itself */}
+              <TextInput
+                placeholder="Name"
                 style={{
-                  flexDirection: "row",
-                  alignItems: "center",
-                  borderWidth: 0.5,
-                  borderColor: "white",
-                  borderRadius: 10,
-                  position: "relative",
-                  width: 200, // Adjust width according to your needs
+                  flex: 1,
+                  color: "white",
+                  paddingLeft: 10,
+                  paddingRight: 30, // Add space for the right icon
+                  fontSize: 16,
+                  height: 40,
                 }}
-              >
-                {/* Left icon inside the TextInput */}
-                
-
-                {/* The TextInput itself */}
-                <TextInput
-                  placeholder="Machine"
-                  style={{
-                    flex: 1,
-                    color: "white",
-                    paddingLeft: 10,
-                    paddingRight: 30, // Add space for the right icon
-                    fontSize: 16,
-                    height: 40,
-                  }}
-                  placeholderTextColor="white"
-                  keyboardType="numeric"
-                />
-
-                
-              </View>
+                placeholderTextColor="white"
+               
+              />
             </View>
+            <TextInput  placeholder="ID" style={{width:50,borderWidth:0.5,borderColor:"white",color:"white",marginLeft:9,borderRadius:10,position:"relative",left:3.5,paddingLeft:10 ,height:40}}  keyboardType="numeric"  placeholderTextColor={"white"} />
+          </View>
 
-            {/* <View style={{display:"flex",alignItems:"center",flexDirection:"row",gap:20,marginTop:20}} >
+          <View
+            style={{
+              display: "flex",
+              alignItems: "center",
+              flexDirection: "row",
+              gap: 10,
+            }}
+          >
+            <Text style={{ fontSize: 15, fontWeight: "bold", color: "white" }}>
+              Machine
+            </Text>
+
+            {/* Container for the TextInput and icons */}
+            <View
+              style={{
+                flexDirection: "row",
+                alignItems: "center",
+                borderWidth: 0.5,
+                borderColor: "white",
+                borderRadius: 10,
+                position: "relative",
+                width: 200, // Adjust width according to your needs
+                left: 12,
+              }}
+            >
+              {/* Left icon inside the TextInput */}
+
+              {/* The TextInput itself */}
+              <TextInput
+                placeholder="Machine"
+                style={{
+                  flex: 1,
+                  color: "white",
+                  paddingLeft: 10,
+                  paddingRight: 30, // Add space for the right icon
+                  fontSize: 16,
+                  height: 40,
+                }}
+                placeholderTextColor="white"
+                keyboardType="numeric"
+              />
+            </View>
+          </View>
+
+          {/* <View style={{display:"flex",alignItems:"center",flexDirection:"row",gap:20,marginTop:20}} >
               <Text style={{fontSize:20,fontWeight:"bold",color:"white"}} >Amount</Text>
               <TextInput placeholder='Amount' style={{width:150,borderWidth:1,position:"relative",left:4,color:"white",borderColor:"white" }} placeholderTextColor={"white"}  />
               <View>
@@ -138,119 +177,123 @@ export default function Givenpoints() {
              </View>
            </View> */}
 
+          <View
+            style={{
+              display: "flex",
+              alignItems: "center",
+              flexDirection: "row",
+              gap: 10,
+              marginTop: 20,
+            }}
+          >
+            <Text style={{ fontSize: 15, fontWeight: "bold", color: "white" }}>
+              Amount
+            </Text>
+
+            {/* Container for the TextInput and icons */}
             <View
               style={{
+                flexDirection: "row",
+                alignItems: "center",
+                borderWidth: 0.5,
+                borderColor: "white",
+                borderRadius: 10,
+                position: "relative",
+                width: 200,
+                left: 12,
+              }}
+            >
+              {/* Left icon inside the TextInput */}
+              <TouchableOpacity
+                style={{
+                  position: "absolute",
+                  left: 10,
+                  top: "50%",
+                  transform: [{ translateY: -12 }],
+                  zIndex: 1,
+                }}
+              >
+                <Entypo name="circle-with-minus" size={24} color="white" />
+              </TouchableOpacity>
+
+              {/* The TextInput itself */}
+              <TextInput
+                placeholder="00.00"
+                style={{
+                  flex: 1,
+                  color: "white",
+                  paddingLeft: 70,
+                  paddingRight: 30,
+                  fontSize: 16,
+                  height: 40,
+                  position: "relative",
+                }}
+                placeholderTextColor="white"
+                keyboardType="numeric"
+              />
+
+              <TouchableOpacity
+                style={{
+                  position: "absolute",
+                  right: 10,
+                  top: "50%",
+                  transform: [{ translateY: -12 }],
+                }}
+              >
+                
+                <Entypo name="circle-with-plus" size={24} color="white" />
+              </TouchableOpacity>
+            </View>
+          </View>
+
+          <View
+            style={{
+              display: "flex",
+              alignItems: "center",
+              flexDirection: "row",
+              gap: 20,
+              marginTop: 20,
+              width: "83%",
+              justifyContent: "flex-end",
+             
+            }}
+          >
+            <TouchableOpacity style={{}}>
+              <Ionicons name="refresh" size={24} color="white" />
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={{
+                width: 150,
                 display: "flex",
                 alignItems: "center",
-                flexDirection: "row",
-                gap: 10,
-                marginTop: 20,
+                justifyContent: "center",
+                backgroundColor: "#BC1E2D",
+                paddingVertical: 5,
+                borderRadius: 10,
+                boxShadow: "5px 5px 8px rgba(212, 0, 0, 0.2)",
               }}
             >
               <Text
-                style={{ fontSize: 18, fontWeight: "bold", color: "white" }}
+                style={{ fontSize: 20, fontWeight: "bold", color: "white" }}
               >
-                Amount 
+                Set Points
               </Text>
-
-              {/* Container for the TextInput and icons */}
-              <View
-                style={{
-                  flexDirection: "row",
-                  alignItems: "center",
-                  borderWidth: 0.5,
-                  borderColor: "white",
-                  borderRadius: 10,
-                  position: "relative",
-                  width: 200, 
-                  left: 2.5
-                }}
-              >
-                {/* Left icon inside the TextInput */}
-                <TouchableOpacity
-                  style={{
-                    position: "absolute",
-                    left: 10,
-                    top: "50%",
-                    transform: [{ translateY: -12 }],
-                    zIndex: 1,
-                  }}
-                 
-                > 
-                  <Entypo name="circle-with-plus" size={24} color="white" />
-                </TouchableOpacity>
-
-                {/* The TextInput itself */}
-                <TextInput
-                  placeholder="00.00"
-                  style={{
-                    flex: 1,
-                    color: "white",
-                    paddingLeft: 70,
-                    paddingRight: 30, 
-                    fontSize: 16,
-                    height: 40,
-                    position: "relative",
-                  }}
-                  placeholderTextColor="white"
-                  keyboardType="numeric"
-                />
-
-                <TouchableOpacity
-                  style={{
-                    position: "absolute",
-                    right: 10,
-                    top: "50%",
-                    transform: [{ translateY: -12 }],
-                  }}
-                >
-                  <Entypo name="circle-with-minus" size={24} color="white" />
-                </TouchableOpacity>
-              </View>
-            </View>
-
-            <View
-              style={{
-                display: "flex",
-                alignItems: "center",
-                flexDirection: "row",
-                gap: 20,
-                marginTop: 20,
-                width: "80%",
-                justifyContent: "flex-end",
-              }}
-            >
-              <TouchableOpacity style={{}}>
-                <Ionicons name="refresh" size={24} color="white" />
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={{
-                  width: 150,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  backgroundColor: "#BC1E2D",
-                  paddingVertical: 5,
-                  borderRadius: 10,
-                  boxShadow: "5px 5px 8px rgba(212, 0, 0, 0.2)",
-                }}
-              >
-                <Text
-                  style={{ fontSize: 20, fontWeight: "bold", color: "white" }}
-                >
-                  Set Points
-                </Text>
-              </TouchableOpacity>
-            </View>
-            </LinearGradient>
-          {/* </View> */}
-        </View>
-
-        <View  style={{flex:1,marginTop:20, boxShadow: '5px 10px 8px rgba(0, 0, 0, 0.4)' }} >
-          
-           <GivenpointTable />
-        </View>
+            </TouchableOpacity>
+          </View>
+        </LinearGradient>
+        {/* </View> */}
       </View>
+
+      <View
+        style={{
+          flex: 1,
+          marginTop: 20,
+          boxShadow: "5px 10px 8px rgba(0, 0, 0, 0.4)",
+        }}
+      >
+        <GivenpointTable />
+      </View>
+    </View>
     // </ImageBackground>
   );
 }

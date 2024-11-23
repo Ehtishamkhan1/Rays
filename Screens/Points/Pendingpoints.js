@@ -12,6 +12,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { LinearGradient } from "expo-linear-gradient";
 import GivenpointTable from "../../Components/GivenpointTable";
 import { TouchableRipple } from "react-native-paper";
+import PendingPointTable from "../../Components/PendingPointTable";
 
 
 export default function Pendingpoints() {
@@ -97,7 +98,7 @@ export default function Pendingpoints() {
                   flexDirection: "row",
                   alignItems: "center",
                   borderWidth: 0.5,
-                  borderColor: "white",
+                  borderColor: "white", 
                   borderRadius: 10,
                   position: "relative",
                   width: 200, // Adjust width according to your needs
@@ -118,7 +119,7 @@ export default function Pendingpoints() {
                     height: 40,
                   }}
                   placeholderTextColor="white"
-                  keyboardType="numeric"
+                 
                 />
 
                 
@@ -177,7 +178,7 @@ export default function Pendingpoints() {
                   }}
                  
                 > 
-                  <Entypo name="circle-with-plus" size={24} color="white" />
+                 <Entypo name="circle-with-minus" size={24} color="white" />
                 </TouchableOpacity>
 
                 {/* The TextInput itself */}
@@ -204,7 +205,8 @@ export default function Pendingpoints() {
                     transform: [{ translateY: -12 }],
                   }}
                 >
-                  <Entypo name="circle-with-minus" size={24} color="white" />
+                   <Entypo name="circle-with-plus" size={24} color="white" />
+                  
                 </TouchableOpacity>
               </View>
             </View>
@@ -247,8 +249,7 @@ export default function Pendingpoints() {
         </View>
 
         <View  style={{flex:1,marginTop:20, boxShadow: '5px 10px 8px rgba(0, 0, 0, 0.4)' }} >
-          
-           <GivenpointTable />
+          <PendingPointTable/>
         </View>
       </View>
     // </ImageBackground>
