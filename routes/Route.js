@@ -15,6 +15,10 @@ import CustomTabbar from './CustomTabbar';
 import Raylogo from '../assets/Raylogo.png';
 import Bank from '../Screens/BankandExpense/Bank';
 import Expenses from '../Screens/BankandExpense/Expenses';
+import MaterialIcons from "@expo/vector-icons/MaterialIcons";
+import Entypo from "@expo/vector-icons/Entypo";
+import FontAwesome from "@expo/vector-icons/FontAwesome";
+import Ionicons from "@expo/vector-icons/Ionicons";
 
 
 const Drawer = createDrawerNavigator();
@@ -76,7 +80,7 @@ function Mydrawer(){
           headerRight: () => (<Image source={Raylogo} style={{width:40,height:40,position:"absolute",right:20 }} />),
           // headerBackground : ()=>(<ImageBackground source={Back} style={{flex:1}} ></ImageBackground>)
         }} >
-      <Drawer.Screen name="Points" component={MyTabs} options={{title:"Points",headerTitleAlign:"center",}}  />
+      <Drawer.Screen name="Points" component={MyTabs} options={{title:"Points",headerTitleAlign:"center", }}    />
       <Drawer.Screen name="Ticket" component={Ticket} />
       <Drawer.Screen name="Banks" component={MyTab1} options={{title:"Bank & Expenses",headerTitleAlign:"center"}}  />
       <Drawer.Screen name="Newmember" component={NewMember} />
