@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, Button, TouchableOpacity, Image, Platform, StyleSheet, TextInput, KeyboardAvoidingView } from "react-native";
+import { View, Text, Button, TouchableOpacity, Image, Platform, StyleSheet, TextInput, KeyboardAvoidingView, Keyboard } from "react-native";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import Ionicons from "@expo/vector-icons/Ionicons";
@@ -169,6 +169,9 @@ export default function NewMember() {
             color: "black",
             marginBottom: 10,
           }}
+          
+          returnKeyType="done"
+          onPress={Keyboard.dismiss}
         ></TextInput>
         <View
           style={{
