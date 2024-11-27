@@ -1,13 +1,18 @@
 import { View, Text, TouchableOpacity } from 'react-native';
-import React from 'react';
+import React,{useContext} from 'react';
+import { ThemeContext } from '../Context/ThemeContext';
+
 
 export default function CustomTabbar({ state, descriptors, navigation }) {
+   
+  const {theme, setIsDarkMode} = useContext(ThemeContext);
+
   return (
-    <View style={{ flexDirection: 'row', backgroundColor: 'white', height: 70,justifyContent: 'center' }}>
+    <View style={{ flexDirection: 'row', backgroundColor: theme.background, height: 70,justifyContent: 'center' }}>
       {state.routes.map((route, index) => {
         const { options } = descriptors[route.key];
         const isFocused = state.index === index;
-
+      
         return (
           <TouchableOpacity
             key={route.key}

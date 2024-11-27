@@ -7,7 +7,7 @@ import {
   ScrollView,
   RefreshControl
 } from "react-native";
-import React,{useState} from "react";
+import React,{useState,useContext} from "react";
 
 import Entypo from "@expo/vector-icons/Entypo";
 import Ionicons from "@expo/vector-icons/Ionicons";
@@ -17,10 +17,14 @@ import { TouchableRipple } from "react-native-paper";
 import { TextInput } from "react-native-paper";
 import { Provider as PaperProvider, DefaultTheme } from "react-native-paper";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
+import { ThemeContext } from "../../Context/ThemeContext";
 
 export default function Givenpoints() {
    
   const [refreshing, setRefreshing] = useState(false);
+
+  const { theme } = useContext(ThemeContext);
+
 
   // Function to handle refresh logic
   const onRefresh = () => {
@@ -33,7 +37,7 @@ export default function Givenpoints() {
 
   return (
     // <ImageBackground source={Back} style={{ flex: 1 }}>
-    <View style={{ flex: 1, backgroundColor: "white" }}>
+    <View style={{ flex: 1, backgroundColor: theme.background }}>
       
       <View
         style={{
@@ -56,6 +60,7 @@ export default function Givenpoints() {
             borderRadius: 10,
             borderWidth: 2,
             borderColor: "#F3AF30",
+            backgroundColor: "white",
           }}
         >
           <View
@@ -73,8 +78,7 @@ export default function Givenpoints() {
               label="Name"
               style={{
                 width: "70%",
-                backgroundColor: "transparent",
-                color: "white",
+                color: "black",
                 marginRight: 15,
               }} // Transparent background
               theme={{
@@ -225,7 +229,7 @@ export default function Givenpoints() {
           boxShadow: "5px 10px 8px rgba(0, 0, 0, 0.4)",
         }}
       >
-        <GivenpointTable />
+        <GivenpointTable   />
       </View>
     </View>
     // </ImageBackground>

@@ -1,8 +1,13 @@
 import { View, Text, FlatList, Touchable } from 'react-native';
-import React from 'react';
+import React,{ useState, useContext } from 'react';
 import { TouchableRipple } from 'react-native-paper';
+import { ThemeContext } from '../Context/ThemeContext';
 
 export default function ExpensesTable() {
+
+
+    const { theme } = useContext(ThemeContext);
+
     const data = [
         { srNo: 1, no1: 101, no2: 201, time: '10:00 AM', country: 'USA' },
         { srNo: 2, no1: 102, no2: 202, time: '11:00 AM', country: 'UK' },
@@ -30,9 +35,9 @@ export default function ExpensesTable() {
     rippleColor="rgba(212, 175, 55, .5)"
           >
         <View style={{ flexDirection: 'row', justifyContent: 'space-between', padding: 10, borderBottomWidth: 0.5, borderColor: 'grey' }}>
-            <Text style={{ width: 100, textAlign: 'center' }}>{item.srNo}</Text>
-            <Text style={{ width: 40, textAlign: 'center' }}>{item.no1}</Text>
-            <Text style={{ width: 40, textAlign: 'center' }}>{item.no2}</Text>
+            <Text style={{ width: 100, textAlign: 'center', color: theme.text }}>{item.srNo}</Text>
+            <Text style={{ width: 40, textAlign: 'center', color: theme.text }}>{item.no1}</Text>
+            <Text style={{ width: 40, textAlign: 'center', color: theme.text }}>{item.no2}</Text>
         </View>
         </TouchableRipple>
     );
@@ -40,10 +45,10 @@ export default function ExpensesTable() {
     return (
         <View style={{ flex: 1 }}>
           
-            <View style={{ flexDirection: 'row', justifyContent: 'space-between', padding: 10, backgroundColor: '#f0f0f0', elevation: 5, shadowColor: '#000', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.8, shadowRadius: 3 }}>
-                <Text style={{ width: 100, textAlign: 'center', fontWeight: 'bold' }}>Bank</Text>
-                <Text style={{ width: 40, textAlign: 'center', fontWeight: 'bold' }}>No.1</Text>
-                <Text style={{ width: 40, textAlign: 'center', fontWeight: 'bold' }}>No.2</Text>
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between', padding: 10, backgroundColor: theme.background, elevation: 5, shadowColor: '#000', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.8, shadowRadius: 3 }}>
+                <Text style={{ width: 100, textAlign: 'center', fontWeight: 'bold', color: theme.text }}>Bank</Text>
+                <Text style={{ width: 40, textAlign: 'center', fontWeight: 'bold', color: theme.text }}>No.1</Text>
+                <Text style={{ width: 40, textAlign: 'center', fontWeight: 'bold', color: theme.text }}>No.2</Text>
             </View>
 
             {/* FlatList for data with no header */}

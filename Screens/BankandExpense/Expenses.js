@@ -6,7 +6,7 @@ import {
     TouchableOpacity,
     TouchableWithoutFeedback, ScrollView, RefreshControl
 } from "react-native";
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback,useContext } from "react";
 import Back from "../../assets/Back.png";
 import Entypo from "@expo/vector-icons/Entypo";
 import Ionicons from "@expo/vector-icons/Ionicons";
@@ -14,12 +14,17 @@ import { LinearGradient } from "expo-linear-gradient";
 import ExpensesTable from "../../Components/ExpensesTable";
 import { TouchableRipple } from "react-native-paper";
 import { TextInput } from "react-native-paper";
+import { ThemeContext } from "../../Context/ThemeContext";
 
 
 export default function Expenses() {
     const [text, setText] = useState('');
     const [desText, setdesText] = useState('');
     const [refreshing, setRefreshing] = useState(false);
+
+
+
+    const { theme } = useContext(ThemeContext);
 
     const onRefresh = useCallback(() => {
         setRefreshing(true);
@@ -31,7 +36,7 @@ export default function Expenses() {
       }, []);
 
     return (
-        <View style={{ flex: 1, backgroundColor: "white" }} >
+        <View style={{ flex: 1, backgroundColor: theme.background }} >
             <View
                 style={{
                     height: 300,
@@ -94,7 +99,8 @@ export default function Expenses() {
                             borderRadius: 10,
                             borderColor: "#F3AF30",
                             borderWidth: 2,
-                            boxShadow: '5px 10px 8px rgba(0, 0, 0, 0.2)'
+                            boxShadow: '5px 10px 8px rgba(0, 0, 0, 0.2)',
+                            backgroundColor: "white"
                         }}
                     >
 
