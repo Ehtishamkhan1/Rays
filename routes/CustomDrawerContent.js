@@ -1,4 +1,4 @@
-import { View, Text, Image, TouchableOpacity } from "react-native";
+import { View, Text, Image, TouchableOpacity  } from "react-native";
 import React from "react";
 import Sophia from "../assets/Sophia.png";
 import Point from "../assets/Point.png";
@@ -19,7 +19,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 
 export default function CustomDrawerContent(props) {
   const { navigation } = props;
-  
+
   const data = [
     {
       id: 1,
@@ -54,7 +54,7 @@ export default function CustomDrawerContent(props) {
   ];
 
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{ flex: 1  }}>
       <View
         style={{
           height: "30%",
