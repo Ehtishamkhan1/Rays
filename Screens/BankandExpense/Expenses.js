@@ -6,7 +6,7 @@ import {
     TouchableOpacity,
     TouchableWithoutFeedback, ScrollView, RefreshControl
 } from "react-native";
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect, useRef } from "react";
 import Back from "../../assets/Back.png";
 import Entypo from "@expo/vector-icons/Entypo";
 import Ionicons from "@expo/vector-icons/Ionicons";
@@ -20,6 +20,10 @@ export default function Expenses() {
     const [text, setText] = useState('');
     const [desText, setdesText] = useState('');
     const [refreshing, setRefreshing] = useState(false);
+    const [isInputFocused, setIsInputFocused] = useState(false);
+    const myInputRef = useRef(null);
+
+
 
     const onRefresh = useCallback(() => {
         setRefreshing(true);
@@ -94,7 +98,6 @@ export default function Expenses() {
                             borderRadius: 10,
                             borderColor: "#F3AF30",
                             borderWidth: 2,
-                            boxShadow: '5px 10px 8px rgba(0, 0, 0, 0.2)'
                         }}
                     >
 
@@ -176,16 +179,20 @@ export default function Expenses() {
 
                                 }}
                             >
+                                <TouchableOpacity
+                                style={{flex: 1}}
+                                onPress={() => {myInputRef.current.focus()}}>
                                 <TextInput
                                     label="Description"
                                     value={desText}
                                     onChangeText={setdesText}
+                                    ref={myInputRef}
+                                    onFocus={() => setIsInputFocused(true)}
+                                    onBlur={() => setIsInputFocused(false)}
                                     style={{
                                         flex: 1,
-                                        paddingLeft: 0,
-                                        paddingRight: 30,
-                                        fontSize: 18,
-                                        height: 80,
+                                        fontSize: 16,
+                                        paddingBottom: isInputFocused ? 0 : 30,
                                         position: "relative",
                                         backgroundColor: "transparent",
                                         textAlignVertical: "top",
@@ -198,9 +205,9 @@ export default function Expenses() {
                                     }}
                                     mode="outlined"
                                     multiline={true}
-                                    numberOfLines={4}
                                     onPressOut={() => Keyboard.dismiss()}
                                 />
+                                </TouchableOpacity>
 
                             </View>
 
