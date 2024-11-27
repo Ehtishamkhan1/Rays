@@ -14,6 +14,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import ExpensesTable from "../../Components/ExpensesTable";
 import { TouchableRipple } from "react-native-paper";
 import { TextInput } from "react-native-paper";
+import { ThemeContext } from "../../Context/ThemeContext";
 
 
 export default function Expenses() {
@@ -25,6 +26,10 @@ export default function Expenses() {
 
 
 
+
+
+    const { theme } = useContext(ThemeContext);
+
     const onRefresh = useCallback(() => {
         setRefreshing(true);
         // Simulate a network request or data refresh
@@ -35,7 +40,7 @@ export default function Expenses() {
       }, []);
 
     return (
-        <View style={{ flex: 1, backgroundColor: "white" }} >
+        <View style={{ flex: 1, backgroundColor: theme.background }} >
             <View
                 style={{
                     height: 300,
@@ -98,6 +103,8 @@ export default function Expenses() {
                             borderRadius: 10,
                             borderColor: "#F3AF30",
                             borderWidth: 2,
+                            boxShadow: '5px 10px 8px rgba(0, 0, 0, 0.2)',
+                            backgroundColor: "white"
                         }}
                     >
 

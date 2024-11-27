@@ -1,5 +1,5 @@
 import { View, Text,ImageBackground,Image } from 'react-native'
-import React from 'react'
+import React, { useContext } from 'react'
 import { createStackNavigator } from '@react-navigation/stack';
 import Login from '../Screens/Login';
 import Register from '../Screens/Register';
@@ -20,11 +20,14 @@ import Entypo from "@expo/vector-icons/Entypo";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import Pendings from '../Screens/Setting/Pendings';
+import { ThemeContext } from '../Context/ThemeContext';
 
 
 const Drawer = createDrawerNavigator();
 const Stack=createStackNavigator();
 const Tab = createMaterialTopTabNavigator();
+
+
 
 
 export default function Route() {
@@ -73,14 +76,16 @@ function MyTab1() {
 
 
 function Mydrawer(){
+   const { theme } = useContext(ThemeContext);
   return(
     
     <Drawer.Navigator   drawerContent={props => <CustomDrawerContent {...props} />}  screenOptions={{
           drawerStyle: { width: "70%" },
-          headerStyle: { backgroundColor: 'White' },
+          headerStyle: { backgroundColor: theme.background },
           headerTitleAlign: "center",
-          headerRight: () => (<Image source={Raylogo} style={{width:40,height:40,position:"absolute",right:20 }} />),
+          headerRight: () => (<Image source={Raylogo} style={{width:45,height:42.5,position:"absolute",right:20 }} />),
           // headerBackground : ()=>(<ImageBackground source={Back} style={{flex:1}} ></ImageBackground>)
+          headerTintColor: theme.text
         }} >
       <Drawer.Screen name="Points" component={MyTabs} options={{title:"Points",headerTitleAlign:"center", }}    />
       <Drawer.Screen name="Ticket" component={Ticket} />

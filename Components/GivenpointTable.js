@@ -1,7 +1,7 @@
 import { View, Text, FlatList, Touchable } from 'react-native';
-import React from 'react';
+import React, { useState, useContext } from 'react';
 import { TouchableRipple } from 'react-native-paper';
-
+import { ThemeContext } from '../Context/ThemeContext';
 export default function GivenpointTable() {
     const data = [
         { srNo: 1, no1: 101, no2: 201, time: '10:00 AM', country: 'USA' },
@@ -28,19 +28,22 @@ export default function GivenpointTable() {
         { srNo: 7, no1: 107, no2: 207, time: '04:00 PM', country: 'Italy' },
         { srNo: 8, no1: 108, no2: 208, time: '05:00 PM', country: 'Spain' },
         { srNo: 9, no1: 109, no2: 209, time: '06:00 PM', country: 'Japann' },
-    ];
+    ];  
 
+       
+     const { theme } = useContext(ThemeContext);
+     
     const renderItem = ({ item }) => (
          <TouchableRipple 
          onPressIn={() => {}}
     rippleColor="rgba(212, 175, 55, .5)"
           >
         <View style={{ flexDirection: 'row', justifyContent: 'space-between', padding: 10, borderBottomWidth: 0.5, borderColor: 'grey' }}>
-            <Text style={{ width: 70, textAlign: 'center' }}>{item.srNo}</Text>
-            <Text style={{ width: 70, textAlign: 'center' }}>{item.no1}</Text>
-            <Text style={{ width: 70, textAlign: 'center' }}>{item.no2}</Text>
-            <Text style={{ width: 70, textAlign: 'center' }}>{item.time}</Text>
-            <Text style={{ width: 70, textAlign: 'center' }}>{item.country}</Text>
+            <Text style={{ width: 70, textAlign: 'center',color: theme.text}}>{item.srNo}</Text>
+            <Text style={{ width: 70, textAlign: 'center',color: theme.text }}>{item.no1}</Text>
+            <Text style={{ width: 70, textAlign: 'center',color: theme.text }}>{item.no2}</Text>
+            <Text style={{ width: 70, textAlign: 'center',color: theme.text }}>{item.time}</Text>
+            <Text style={{ width: 70, textAlign: 'center',color: theme.text }}>{item.country}</Text>
         </View>
         </TouchableRipple>
     );
@@ -48,12 +51,12 @@ export default function GivenpointTable() {
     return (
         <View style={{ flex: 1 }}>
           
-            <View style={{ flexDirection: 'row', justifyContent: 'space-between', padding: 10, backgroundColor: '#f0f0f0', elevation: 5, shadowColor: '#000', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.8, shadowRadius: 3 }}>
-                <Text style={{ width: 70, textAlign: 'center', fontWeight: 'bold' }}>Sr.No</Text>
-                <Text style={{ width: 70, textAlign: 'center', fontWeight: 'bold' }}>No.1</Text>
-                <Text style={{ width: 70, textAlign: 'center', fontWeight: 'bold' }}>No.2</Text>
-                <Text style={{ width: 70, textAlign: 'center', fontWeight: 'bold' }}>Time</Text>
-                <Text style={{ width: 70, textAlign: 'center', fontWeight: 'bold' }}>Country</Text>
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between', padding: 10, backgroundColor: theme.background, elevation: 5, shadowColor: '#000', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.8, shadowRadius: 3, }}>
+                <Text style={{ width: 70, textAlign: 'center', fontWeight: 'bold', color: theme.text }}>Sr.No</Text>
+                <Text style={{ width: 70, textAlign: 'center', fontWeight: 'bold',color: theme.text }}>No.1</Text>
+                <Text style={{ width: 70, textAlign: 'center', fontWeight: 'bold',color: theme.text }}>No.2</Text>
+                <Text style={{ width: 70, textAlign: 'center', fontWeight: 'bold',color: theme.text }}>Time</Text>
+                <Text style={{ width: 70, textAlign: 'center', fontWeight: 'bold',color: theme.text }}>Country</Text>
             </View>
 
             {/* FlatList for data with no header */}
