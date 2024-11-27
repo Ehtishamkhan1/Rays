@@ -19,6 +19,7 @@ import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import Entypo from "@expo/vector-icons/Entypo";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import Pendings from '../Screens/Setting/Pendings';
 
 
 const Drawer = createDrawerNavigator();
@@ -32,6 +33,7 @@ export default function Route() {
     <Stack.Screen name="Login" component={Login}  options={{headerShown:false}}/>
     <Stack.Screen name='Register' component={Register} options={{headerShown:false}}/>
     <Stack.Screen name='MyDrawer' component={Mydrawer} options={{headerShown:false}}/>
+    <Stack.Screen name='Pending' component={Pendings} />
    </Stack.Navigator>
   )
 }
